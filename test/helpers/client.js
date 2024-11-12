@@ -7,7 +7,7 @@ import { MailSlurp } from 'mailslurp-client'
 import { fileURLToPath } from 'node:url'
 import dotenv from 'dotenv'
 
-dotenv.config({ path: fileURLToPath(new URL('../../.env', import.meta.url)) })
+dotenv.config({ path: fileURLToPath(new URL('../../.env.local', import.meta.url)) })
 
 const uploadServiceDID = 'did:web:staging.upload.storacha.network'
 const uploadServiceURL = 'https://staging.upload.storacha.network'
