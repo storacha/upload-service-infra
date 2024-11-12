@@ -1,13 +1,13 @@
-import whyIsNodeRunning from 'why-is-node-running'
+// import whyIsNodeRunning from 'why-is-node-running'
 import { describe, it, after } from 'mocha'
 import assert from 'node:assert'
 import { base58btc } from 'multiformats/bases/base58'
 import { createClient, setupClient } from './helpers/client.js'
 
 describe('e2e', () => {
-  after(() => {
-    setTimeout(() => whyIsNodeRunning(), 5000)
-  })
+  // after(() => {
+  //   setTimeout(() => whyIsNodeRunning(), 5000)
+  // })
 
   it('upload a blob', async function () {
     this.timeout(5 * 60 * 1000)
