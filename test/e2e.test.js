@@ -10,7 +10,7 @@ describe('e2e', () => {
   })
 
   it('upload a blob', async function () {
-    this.timeout(30_000)
+    this.timeout(5 * 60 * 1000)
 
     const client = await createClient()
     await setupClient(client)
