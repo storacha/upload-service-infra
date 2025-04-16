@@ -91,6 +91,17 @@ const codec = Codec.inbound({
  * @param {import('aws-lambda').APIGatewayProxyEventV2} request
  */
 export async function ucanInvocationRouter(request) {
+  // Capture X-Client custom header for analytics - ignore if not present
+  const clientId = request.headers['X-Client']
+  if (clientId) {
+    console.log(JSON.stringify({
+      message: 'Client request',
+      clientId,
+      requestId: request.requestContext?.requestId || 'unknown',
+      timestamp: new Date().toISOString()
+    }))
+  }
+
   const {
     uploadTableName,
     blobRegistryTableName,
